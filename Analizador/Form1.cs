@@ -54,7 +54,7 @@ namespace Analizador
 
                 foreach (var t in tokens)
                 {
-                    // Columna Línea:Col y Tipo (negro)
+                    // Columna Linea:Col y Tipo (negro)
                     rtbSalida.SelectionColor = System.Drawing.Color.Black;
                     rtbSalida.AppendText($"{t.Line}:{t.Column,-4} {t.Type,-12} ");
 
@@ -62,12 +62,12 @@ namespace Analizador
                     rtbSalida.SelectionColor = ColorFor(t.Type);
                     rtbSalida.AppendText($"'{t.Lexeme}'".PadRight(20));
 
-                    // Descripción (negro)
+                    // Descripcion (negro)
                     rtbSalida.SelectionColor = System.Drawing.Color.Black;
                     rtbSalida.AppendText($"  {Descripcion(t)}\n");
                 }
 
-                // Exportar CSV automáticamente al lado del archivo (si hay ruta)
+                // Exportar CSV
                 if (!string.IsNullOrWhiteSpace(_rutaArchivo) && File.Exists(_rutaArchivo))
                 {
                     var dir = Path.GetDirectoryName(_rutaArchivo)!;
